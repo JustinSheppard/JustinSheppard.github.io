@@ -14,7 +14,7 @@ request.onload = function() {
   var data = JSON.parse(this.response)
 
   if (request.status >= 200 && request.status < 400) {
-    data.competitors.forEach(competitor => {
+    data.competitor.forEach(competitor => {
 			console.log(competitor.name)
       const card = document.createElement('div')
 			card.setAttribute('class', 'card')
