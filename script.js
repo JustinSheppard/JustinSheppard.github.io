@@ -8,14 +8,13 @@ app.appendChild(container)
 
 
 var request = new XMLHttpRequest()
-
 request.open('GET', 'https://api.overwatchcontenders.com/teams', true)
 request.onload = function() {
   // Begin accessing JSON data here
   var data = JSON.parse(this.response)
 
   if (request.status >= 200 && request.status < 400) {
-    data.forEach(competitor => {
+    data.quotesArray.forEach(competitor => {
       const card = document.createElement('div')
 			card.setAttribute('class', 'card')
 			
