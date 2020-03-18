@@ -11,10 +11,15 @@ var request = new XMLHttpRequest();
 request.open('GET', 'https://api.overwatchcontenders.com/teams', true);
 request.onload = function() {
   // Begin accessing JSON data here
-  var data = JSON.parse(this.response);
+  var data = JSON.parse(this.response); //everything
   var competitors = data.competitors;
 
   if (request.status >= 200 && request.status < 400) {
+    console.log(object.keys(data));
+    console.log(object.keys(data)[0]);
+    console.log(object.keys(data)[1]);
+    console.log(data[1]);
+    console.log(data.competitors[1]);
     for (var i in competitors){
       var competitor = i;
       var name = competitor.name;
