@@ -17,12 +17,13 @@ request.onload = function () {
         data.data.forEach(competitor => {
             console.log(competitor.name);
 
-
             const card = document.createElement('div');
             card.setAttribute('class', 'card');
 
             const h1 = document.createElement('h1');
             h1.textContent = competitor.name;
+            card.appendChild(h1);
+
             competitor.players.forEach(player =>{
                 console.log(player.name);
                 const p = document.createElement('p');
@@ -37,7 +38,7 @@ request.onload = function () {
             //p.textContent = '${competitor.name}...'
 
             container.appendChild(card);
-            card.appendChild(h1);
+
 
         });
     } else {
