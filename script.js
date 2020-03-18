@@ -16,7 +16,7 @@ request.onload = function() {
 
   if (request.status >= 200 && request.status < 400) {
     for (var i in competitors){
-      var competitor = competitor[i];
+      var competitor = i;
       var name = competitor.name;
       console.log(name);
       
