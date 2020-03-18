@@ -25,11 +25,12 @@ request.onload = function () {
             h1.textContent = competitor.name;
             competitor.players.forEach(player =>{
                 console.log(player.name);
+                const p = document.createElement('p');
+                p.textContent = player.name;
             });
 
             //console.log(h1);
-            const p = document.createElement('p');
-            p.textContent = competitor.abbreviatedName;
+
 
             //competitor.game = competitor.game.substring(0, 300)
             //p.textContent = '${competitor.name}...'
