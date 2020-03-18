@@ -27,6 +27,7 @@ request.onload = function () {
                 console.log(player.name);
                 const p = document.createElement('p');
                 p.textContent = player.name;
+                card.appendChild(p);
             });
 
             //console.log(h1);
@@ -37,7 +38,7 @@ request.onload = function () {
 
             container.appendChild(card);
             card.appendChild(h1);
-            card.appendChild(p);
+
         });
     } else {
         const errorMessage = document.createElement('marquee');
