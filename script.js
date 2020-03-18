@@ -15,14 +15,14 @@ request.onload = function() {
 
   if (request.status >= 200 && request.status < 400) {
     data.competitors.forEach(competitor => {
-			console.log(competitors.competitor.name);
+			console.log(competitor["name"]);
 			
 			
       const card = document.createElement('div');
 			card.setAttribute('class', 'card');
 			
 			const h1 = document.createElement('h1');
-			h1.textContent = competitors.competitor.name;
+			h1.textContent = competitor.name;
 			//console.log(h1);
 			const p = document.createElement('p');
 			p.textContent = competitor.game;
