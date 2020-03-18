@@ -14,15 +14,7 @@ request.onload = function() {
   var data = JSON.parse(this.response);
 
   if (request.status >= 200 && request.status < 400) {
-    for( var i = 0; i < data.length; i++){
-      console.log(data.competitors.competitor[i].name);
-      console.log();
-      console.log(data.competitors);
-      console.log(data.competitors.competitor);
-      console.log(data.teams);
-    }
-    
-    /*data.competitors.forEach(competitor => {
+    data.competitors.forEach(competitor => {
 			console.log(competitor.name);
 			
 			
@@ -42,7 +34,7 @@ request.onload = function() {
 			container.appendChild(card);
 			card.appendChild(h1);
 			card.appendChild(p);
-    });*/
+    });
   } else {
     const errorMessage = document.createElement('marquee');
     errorMessage.textContent = `Gah, it's not working!`;
