@@ -38,6 +38,7 @@ request.onload = function () {
             //p.textContent = '${competitor.name}...'
 
             container.appendChild(card);
+            card.href = "https://twitter.com/";
 
 
         });
