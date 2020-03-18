@@ -16,6 +16,10 @@ request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
     for( var i = 0; i < data.length; i++){
       console.log(data.competitors.competitor[i].name);
+      console.log();
+      console.log(data.competitors);
+      console.log(data.competitors.competitor);
+      console.log(data.teams);
     }
     
     /*data.competitors.forEach(competitor => {
