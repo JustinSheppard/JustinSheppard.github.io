@@ -15,7 +15,7 @@ request.onload = function() {
 
   if (request.status >= 200 && request.status < 400) {
     data.competitors.forEach(competitor => {
-			//console.log(competitor);
+			console.log(competitors.competitor.name);
 			
 			
       const card = document.createElement('div');
