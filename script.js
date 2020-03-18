@@ -14,7 +14,7 @@ request.onload = function() {
   var data = JSON.parse(this.response);
 
   if (request.status >= 200 && request.status < 400) {
-    data.competitors.forEach(competitor => {
+    data.teams.competitors.forEach(competitor => {
 			console.log(competitor.name);
 			
 			
