@@ -22,7 +22,8 @@ request.onload = function() {
 			card.setAttribute('class', 'card');
 			
 			const h1 = document.createElement('h1');
-			h1.textContent = competitor.name;
+      h1.textContent = competitor;
+			//h1.textContent = competitor.name;
 			//console.log(h1);
 			const p = document.createElement('p');
 			p.textContent = competitor.game;
