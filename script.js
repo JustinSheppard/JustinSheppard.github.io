@@ -12,10 +12,10 @@ request.open('GET', 'https://api.overwatchcontenders.com/teams', true);
 request.onload = function() {
   // Begin accessing JSON data here
   var data = JSON.parse(this.response);
-  var dataTwo = data.competitors;
+
   if (request.status >= 200 && request.status < 400) {
-    dataTwo.forEach(competitor => {
-      console.log(competitor);
+    
+    data.competitors[0].forEach(competitor => {
 			console.log(competitor.name);
 			
 			
@@ -24,6 +24,7 @@ request.onload = function() {
 			
 			const h1 = document.createElement('h1');
       h1.textContent = competitor.name;
+	
 			//console.log(h1);
 			const p = document.createElement('p');
 			p.textContent = competitor.game;
