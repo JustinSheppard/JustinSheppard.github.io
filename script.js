@@ -23,6 +23,9 @@ request.onload = function () {
 
             const h1 = document.createElement('h1');
             h1.textContent = competitor.name;
+            competitor.players.forEach(player =>{
+                console.log(player.name);
+            });
 
             //console.log(h1);
             const p = document.createElement('p');
