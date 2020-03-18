@@ -37,8 +37,9 @@ request.onload = function () {
             //competitor.game = competitor.game.substring(0, 300)
             //p.textContent = '${competitor.name}...'
 
-            container.appendChild(card);
+
             card.href = "https://twitter.com/";
+            container.appendChild(card);
 
 
         });
