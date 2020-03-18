@@ -22,6 +22,7 @@ request.onload = function() {
 			h1.textContent = competitor.name
 			
 			const p = document.createElement('p')
+			p.textContent = competitor.game
 			
 			//competitor.game = competitor.game.substring(0, 300)
 			//p.textContent = '${competitor.name}...'
