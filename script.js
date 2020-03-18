@@ -14,16 +14,16 @@ request.onload = function() {
   var data = JSON.parse(this.response);
 
   if (request.status >= 200 && request.status < 400) {
-    data.competitors.forEach(competitor => {
+    for (const competitors in data.teams){
+      competitors.forEach(competitor => {
 			console.log(competitor.name);
-			
 			
       const card = document.createElement('div');
 			card.setAttribute('class', 'card');
 			
 			const h1 = document.createElement('h1');
-      h1.textContent = competitor;
-			//h1.textContent = competitor.name;
+      h1.textContent = competitor.name;
+      
 			//console.log(h1);
 			const p = document.createElement('p');
 			p.textContent = competitor.game;
@@ -35,6 +35,28 @@ request.onload = function() {
 			card.appendChild(h1);
 			card.appendChild(p);
     });
+    }
+    
+    /*data.competitors.forEach(competitor => {
+			console.log(competitor.name);
+			
+      const card = document.createElement('div');
+			card.setAttribute('class', 'card');
+			
+			const h1 = document.createElement('h1');
+      h1.textContent = competitor.name;
+      
+			//console.log(h1);
+			const p = document.createElement('p');
+			p.textContent = competitor.game;
+			
+			//competitor.game = competitor.game.substring(0, 300)
+			//p.textContent = '${competitor.name}...'
+			
+			container.appendChild(card);
+			card.appendChild(h1);
+			card.appendChild(p);
+    });*/
   } else {
     const errorMessage = document.createElement('marquee');
     errorMessage.textContent = `Gah, it's not working!`;
