@@ -15,25 +15,25 @@ request.onload = function () {
 
     if (request.status >= 200 && request.status < 400) {
         data.forEach(competitor => {
-                console.log(competitor.name);
+            console.log(competitor.name);
 
 
-          const card = document.createElement('div');
-                card.setAttribute('class', 'card');
+            const card = document.createElement('div');
+            card.setAttribute('class', 'card');
 
-                const h1 = document.createElement('h1');
-          h1.textContent = competitor.name;
+            const h1 = document.createElement('h1');
+            h1.textContent = competitor.name;
 
-                //console.log(h1);
-                const p = document.createElement('p');
-                p.textContent = competitor.game;
+            //console.log(h1);
+            const p = document.createElement('p');
+            p.textContent = competitor.abbreviatedName;
 
-                //competitor.game = competitor.game.substring(0, 300)
-                //p.textContent = '${competitor.name}...'
+            //competitor.game = competitor.game.substring(0, 300)
+            //p.textContent = '${competitor.name}...'
 
-                container.appendChild(card);
-                card.appendChild(h1);
-                card.appendChild(p);
+            container.appendChild(card);
+            card.appendChild(h1);
+            card.appendChild(p);
         });
     } else {
         const errorMessage = document.createElement('marquee');
