@@ -22,8 +22,9 @@ request.onload = function() {
 			h1.textContent = competitor.name
 			
 			const p = document.createElement('p')
-			competitor.game = competitor.game.substring(0, 300)
-			p.textContent = '${competitor.name}...'
+			
+			//competitor.game = competitor.game.substring(0, 300)
+			//p.textContent = '${competitor.name}...'
 			
 			container.appendChild(card)
 			card.appendChild(h1)
