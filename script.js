@@ -15,32 +15,30 @@ request.onload = function () {
 
     if (request.status >= 200 && request.status < 400) {
         data.data.forEach(competitor => {
-            console.log(competitor.name);
+            //console.log(competitor.name);
 
+            //create card, click to go to team information
             const card = document.createElement('div');
             card.setAttribute('class', 'card');
 
+            //create url for team page, on click go to team page
+            const teamPage = "https://".concat(competitor.abbreviatedName, ".github.io");
+            card.onclick = function(){URL(teamPage)};
+
+            //adds team name to the card heading
             const h1 = document.createElement('h1');
             h1.textContent = competitor.name;
             card.appendChild(h1);
 
+            //adds team member names to the body of the card
             competitor.players.forEach(player =>{
-                console.log(player.name);
+                //console.log(player.name);
                 const p = document.createElement('p');
                 p.textContent = player.name;
                 card.appendChild(p);
             });
 
-            //console.log(h1);
-
-
-            //competitor.game = competitor.game.substring(0, 300)
-            //p.textContent = '${competitor.name}...'
-
-
-            card.href = "https://twitter.com/";
             container.appendChild(card);
-
 
         });
     } else {
@@ -49,6 +47,10 @@ request.onload = function () {
         app.appendChild(errorMessage);
     }
 };
+
+function URL(teamPage){
+    location.href = teamPage;
+}
 
 request.send();
 
