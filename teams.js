@@ -2,7 +2,7 @@ const app = document.getElementById('root');
 const logo = document.createElement('img');
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
-app.appendChild(logo);
+//app.appendChild(logo);
 app.appendChild(container);
 
 let request = new XMLHttpRequest();
