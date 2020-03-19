@@ -22,7 +22,7 @@ request.onload = function () {
             card.setAttribute('class', 'card');
 
             //create url for team page, on click go to team page
-            const teamPage = "https://".concat(competitor.abbreviatedName, ".github.io");
+            const teamPage = "https://justinsheppard.github.io/".concat(competitor.abbreviatedName, ".html");
             card.onclick = function(){URL(teamPage)};
 
             //adds team name to the card heading
