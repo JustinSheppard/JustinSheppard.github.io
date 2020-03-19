@@ -7,11 +7,11 @@ app.appendChild(logo);
 app.appendChild(container);
 
 
-var request = new XMLHttpRequest();
+let request = new XMLHttpRequest();
 request.open('GET', 'https://api.overwatchleague.com/v2/teams', true);
 request.onload = function () {
     // Begin accessing JSON data here
-    var data = JSON.parse(this.response);
+    let data = JSON.parse(this.response);
 
     if (request.status >= 200 && request.status < 400) {
         data.data.forEach(competitor => {
