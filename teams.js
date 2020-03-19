@@ -10,7 +10,7 @@ request.open('GET', 'https://api.overwatchleague.com/v2/teams/4523'); //ID is st
 request.onload = function () {
     // Begin accessing JSON data here
     let data = JSON.parse(this.response);
-    let teamLogo = data.logo.mainName.svg;
+    let teamLogo = 'https://bnetcmsus-a.akamaihd.net/cms/page_media/Q8TMKNUFIJL51519747890664.svg';
     logo.src = teamLogo;
     app.appendChild(logo);
 };
