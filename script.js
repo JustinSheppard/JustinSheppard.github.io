@@ -1,6 +1,5 @@
 const app = document.getElementById('root');
 const logo = document.createElement('img');
-logo.src = 'https://bnetcmsus-a.akamaihd.net/cms/page_media/Q8TMKNUFIJL51519747890664.svg';
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
 

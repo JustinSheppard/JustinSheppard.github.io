@@ -11,9 +11,7 @@ request.onload = function () {
     // Begin accessing JSON data here
     let data = JSON.parse(this.response);
 
-    let teamLogo = new Image();
-    teamLogo = 'https://bnetcmsus-a.akamaihd.net/cms/page_media/Q8TMKNUFIJL51519747890664.svg';
-    logo.src = teamLogo;
+    logo.src = 'https://bnetcmsus-a.akamaihd.net/cms/page_media/Q8TMKNUFIJL51519747890664.svg';
     app.appendChild(logo);
 };
 
