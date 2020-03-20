@@ -6,51 +6,39 @@ container.setAttribute('class', 'container');
 app.appendChild(logo);
 app.appendChild(container);
 
+fetch('https://coronavirus-tracker-api.herokuapp.com/v2/locations')
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        data.locations.forEach(location=>{
+            console.log(location.country);
+            console.log(location.province);
 
-let request = new XMLHttpRequest();
-request.open('GET', 'https://api.overwatchleague.com/v2/teams', true);
-request.onload = function () {
-    // Begin accessing JSON data here
-    let data = JSON.parse(this.response);
-
-    if (request.status >= 200 && request.status < 400) {
-        data.data.forEach(competitor => {
-            //console.log(competitor.name);
-
-            //create card, click to go to team information
             const card = document.createElement('div');
             card.setAttribute('class', 'card');
 
-            //create url for team page, on click go to team page
-            const teamPage = "https://justinsheppard.github.io/".concat(competitor.abbreviatedName);
-            card.onclick = function(){URL(teamPage)};
-
-            //adds team name to the card heading
             const h1 = document.createElement('h1');
-            h1.textContent = competitor.name;
+            h1.textContent = location.country.concat(': ', location.province);
             card.appendChild(h1);
 
-            //adds team member names to the body of the card
-            competitor.players.forEach(player =>{
-                //console.log(player.name);
-                const p = document.createElement('p');
-                p.textContent = player.name;
-                card.appendChild(p);
-            });
+            const conf = document.createElement('conf');
+            conf.textContent = 'Confirmed: '.concat(location.latest.confirmed);
+            card.appendChild(conf);
+
+            const dead = document.createElement('dead');
+            dead.textContent = 'Deaths: '.concat(location.latest.deaths);
+            card.appendChild(dead);
+
+
+
+
+
+
 
             container.appendChild(card);
-
-        });
-    } else {
-        const errorMessage = document.createElement('marquee');
-        errorMessage.textContent = `Gah, it's not working!`;
-        app.appendChild(errorMessage);
-    }
-};
-
-function URL(teamPage){
-    location.href = teamPage;
-}
-
-request.send();
-
+        })
+    })
+    .catch(err => {
+        console.log("There's a problem: " + err);
+    });
