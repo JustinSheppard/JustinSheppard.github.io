@@ -1,8 +1,9 @@
 const app = document.getElementById('root');
 const logo = document.createElement('img');
+logo.src = 'https://bnetcmsus-a.akamaihd.net/cms/page_media/Q8TMKNUFIJL51519747890664.svg';
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
-//app.appendChild(logo);
+app.appendChild(logo);
 app.appendChild(container);
 
 let request = new XMLHttpRequest();
@@ -11,7 +12,7 @@ request.onload = function () {
     // Begin accessing JSON data here
     let data = JSON.parse(this.response);
 
-    logo.src = 'https://bnetcmsus-a.akamaihd.net/cms/page_media/Q8TMKNUFIJL51519747890664.svg';
+
     app.appendChild(logo);
 };
 
